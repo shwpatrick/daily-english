@@ -1,8 +1,7 @@
 ---
-layout: default
-title: Welcome
+layout: main
+title: 每日英文
 ---
 
-# Welcome to My Site
-
-This site is built with Jekyll and GitHub Pages!
+歡迎來到每日英文練習！  
+請從左側選擇日期來閱讀文章。
