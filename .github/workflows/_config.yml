@@ -1,0 +1,5 @@
+title: 每日英文
+description: 每日一篇英文學習
+theme: minima
+plugins:
+  - jekyll-feed
