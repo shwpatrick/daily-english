@@ -24,22 +24,31 @@ Preliminary investigations suggest that the outage may have been caused by a rar
 1. **What areas were primarily affected by the April 28 power outage?**
     
     A. Northern Europe
+   
     B. Eastern Europe
+   
     C. Iberian Peninsula and Southern France
+   
     D. Central Europe
     
-2. **What was one immediate consequence of the blackout in Portugal?**
+3. **What was one immediate consequence of the blackout in Portugal?**
     
     A. Increase in tourism
+   
     B. Closure of Lisbon Airport
+   
     C. Expansion of mobile networks
+   
     D. Opening of new metro lines
     
-3. **What is the suspected cause of the power outage?**
+5. **What is the suspected cause of the power outage?**
     
     A. Cyberattack
+   
     B. Equipment failure
+   
     C. Rare atmospheric phenomenon affecting power lines
+   
     D. Human error in power plant operations
 
 <!-- split -->
