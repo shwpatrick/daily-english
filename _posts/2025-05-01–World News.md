@@ -3,12 +3,11 @@ layout: post
 title: "2025-05-01 – World News – Massive Power Outage Hits Iberian Peninsula"
 ---
 
-On April 28, 2025, a significant power outage occurred across Spain, Portugal, Andorra, and parts of southern France, disrupting daily life and essential services. The blackout began at 12:33 PM CET, affecting major cities including Madrid and Lisbon, and causing widespread transportation and communication issues.​[Wikipedia](https://en.wikipedia.org/wiki/2025_European_power_outage?utm_source=chatgpt.com)
+On April 28, 2025, a significant power outage occurred across Spain, Portugal, Andorra, and parts of southern France, disrupting daily life and essential services. The blackout began at 12:33 PM CET, affecting major cities including Madrid and Lisbon, and causing widespread transportation and communication issues.
 
-In Portugal, the outage halted metro services, disrupted mobile networks, and led to the closure of Lisbon Airport. Hospitals operated on emergency generators to maintain critical functions. Similarly, in Spain, train services were suspended, and nuclear power plants automatically shut down as a precaution. The Madrid Open tennis tournament was also interrupted due to the power failure.​[Wikipedia](https://en.wikipedia.org/wiki/2025_European_power_outage?utm_source=chatgpt.com)
+In Portugal, the outage halted metro services, disrupted mobile networks, and led to the closure of Lisbon Airport. Hospitals operated on emergency generators to maintain critical functions. Similarly, in Spain, train services were suspended, and nuclear power plants automatically shut down as a precaution. The Madrid Open tennis tournament was also interrupted due to the power failure.​
 
-Preliminary investigations suggest that the outage may have been caused by a rare atmospheric phenomenon affecting high-voltage power lines, leading to a loss of synchronization in the European power grid. Authorities estimate that full restoration of services could take several hours to a week, depending on the region.​[Wikipedia+1The Scottish Sun+1](https://en.wikipedia.org/wiki/2025_European_power_outage?utm_source=chatgpt.com)
-
+Preliminary investigations suggest that the outage may have been caused by a rare atmospheric phenomenon affecting high-voltage power lines, leading to a loss of synchronization in the European power grid. Authorities estimate that full restoration of services could take several hours to a week, depending on the region.​
 <!-- split -->
 ### Vocabulary
 
@@ -43,13 +42,13 @@ Preliminary investigations suggest that the outage may have been caused by a rar
     D. Human error in power plant operations  
 
 <!-- split -->
-### 📝 Answer Key
+### Answer Key
 
 1. C
 2. B
 3. C
 
 <!-- split -->
-📰 Source
+### Source
 
 [2025 European power outage](https://en.wikipedia.org/wiki/2025_European_power_outage)
