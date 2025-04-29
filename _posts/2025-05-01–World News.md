@@ -3,6 +3,8 @@ layout: post
 title: "2025-05-01 – World News – Massive Power Outage Hits Iberian Peninsula"
 ---
 
+### Article
+
 On April 28, 2025, a significant power outage occurred across Spain, Portugal, Andorra, and parts of southern France, disrupting daily life and essential services. The blackout began at 12:33 PM CET, affecting major cities including Madrid and Lisbon, and causing widespread transportation and communication issues.
 
 In Portugal, the outage halted metro services, disrupted mobile networks, and led to the closure of Lisbon Airport. Hospitals operated on emergency generators to maintain critical functions. Similarly, in Spain, train services were suspended, and nuclear power plants automatically shut down as a precaution. The Madrid Open tennis tournament was also interrupted due to the power failure.​
