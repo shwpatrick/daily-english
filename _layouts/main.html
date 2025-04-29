@@ -7,16 +7,33 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background: #4da6ff;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 80px 40px 40px 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar stats"
+        "sidebar tabs"
+        "sidebar content";
+      height: 100vh;
+    }
+    header {
+      grid-area: header;
+      background: #4CAF50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
     }
     .sidebar {
-      width: 200px;
+      grid-area: sidebar;
       background: #f2f2f2;
       padding: 20px;
-      height: 100vh;
       overflow-y: auto;
-      position: fixed;
-      top: 100px; /* 移下 header 和 stats 高度 */
-      left: 0;
     }
     .sidebar a {
       display: block;
@@ -27,35 +44,20 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
-    .content {
-      margin-left: 220px; /* 移出 sidebar 寬度 */
-      padding: 40px;
-      margin-top: 160px; /* 移下 header 和 stats 空間 */
-    }
-    header {
-      width: 100%;
-      text-align: center;
-      background: #4CAF50;
-      color: white;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
     .stats {
-      text-align: center;
-      padding: 10px;
+      grid-area: stats;
       background: #e0e0e0;
-      width: 100%;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      z-index: 900;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
       font-size: 14px;
     }
     .tabs {
-      margin-bottom: 20px;
+      grid-area: tabs;
+      background: #cce0ff;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
     }
     .tabs button {
       background: #ddd;
@@ -68,6 +70,12 @@
       background: #4CAF50;
       color: white;
     }
+    .content {
+      grid-area: content;
+      background: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
     .tab-content {
       display: none;
     }
@@ -77,39 +85,46 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>每日英文</h1>
-  </header>
+  <div class="container">
+    <header>
+      每日英文
+    </header>
 
-  <div class="stats">
-    Total Articles: {{ site.posts | size }} | Now Viewing: {{ page.title }}
-  </div>
+    <div class="sidebar">
+      {% for post in site.posts %}
+        <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
+      {% endfor %}
+    </div>
 
-  <div class="sidebar">
-    {% for post in site.posts %}
-      <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
-    {% endfor %}
-  </div>
+    <div class="stats">
+      共 {{ site.posts | size }} 篇文章 | 本篇文章：{{ page.title }}
+    </div>
 
-  <div class="content">
     <div class="tabs">
-      <button class="tab-link active" onclick="openTab('article')">Article</button>
-      <button class="tab-link" onclick="openTab('vocabulary')">Vocabulary</button>
-      <button class="tab-link" onclick="openTab('quiz')">Quiz</button>
-      <button class="tab-link" onclick="openTab('source')">Source</button>
+      <button class="tab-link active" onclick="openTab('article')">文章</button>
+      <button class="tab-link" onclick="openTab('vocabulary')">單字</button>
+      <button class="tab-link" onclick="openTab('quiz')">測驗</button>
+      <button class="tab-link" onclick="openTab('answer')">解答</button>
+      <button class="tab-link" onclick="openTab('source')">新聞來源</button>
     </div>
-    {% assign parts = content | split: '---' %}
-    <div id="article" class="tab-content active">
-      {{ parts[0] }}
-    </div>
-    <div id="vocabulary" class="tab-content">
-      {{ parts[1] }}
-    </div>
-    <div id="quiz" class="tab-content">
-      {{ parts[2] }}
-    </div>
-    <div id="source" class="tab-content">
-      {{ parts[4] }}
+
+    <div class="content">
+      {% assign parts = content | split: '---' %}
+      <div id="article" class="tab-content active">
+        {{ parts[0] }}
+      </div>
+      <div id="vocabulary" class="tab-content">
+        {{ parts[1] }}
+      </div>
+      <div id="quiz" class="tab-content">
+        {{ parts[2] }}
+      </div>
+      <div id="answer" class="tab-content">
+        {{ parts[3] }}
+      </div>
+      <div id="source" class="tab-content">
+        {{ parts[4] }}
+      </div>
     </div>
   </div>
 
