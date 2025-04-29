@@ -1,0 +1,7 @@
+---
+title: 單字練習這個到底在幹嘛
+---
+
+# Persistence
+
+Persistence means not giving up even when things are tough.
