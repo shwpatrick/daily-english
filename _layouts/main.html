@@ -7,11 +7,12 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #4da6ff;
+      background: #2e2e3a;
+      color: #ccc;
     }
     .container {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 250px 1fr;
       grid-template-rows: 80px 40px 40px 1fr;
       grid-template-areas:
         "header header"
@@ -22,7 +23,7 @@
     }
     header {
       grid-area: header;
-      background: #4CAF50;
+      background: #5e4b8b;
       color: white;
       display: flex;
       align-items: center;
@@ -31,7 +32,7 @@
     }
     .sidebar {
       grid-area: sidebar;
-      background: #f2f2f2;
+      background: #3a3a4d;
       padding: 20px;
       overflow-y: auto;
     }
@@ -39,15 +40,24 @@
       display: block;
       margin-bottom: 10px;
       text-decoration: none;
-      color: #333;
+      color: #ccc;
       cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar a.active {
+      background: #7d5fb2;
+      color: white;
+      border-radius: 4px;
+      padding: 5px;
     }
     .sidebar a:hover {
       text-decoration: underline;
     }
     .stats {
       grid-area: stats;
-      background: #e0e0e0;
+      background: #4a4a66;
       display: flex;
       align-items: center;
       padding-left: 20px;
@@ -55,25 +65,26 @@
     }
     .tabs {
       grid-area: tabs;
-      background: #cce0ff;
+      background: #5e4b8b;
       display: flex;
       align-items: center;
       padding-left: 20px;
     }
     .tabs button {
-      background: #ddd;
+      background: #6b5ca5;
       border: none;
+      color: white;
       padding: 10px 20px;
       cursor: pointer;
       margin-right: 5px;
     }
     .tabs button.active {
-      background: #4CAF50;
+      background: #7d5fb2;
       color: white;
     }
     .content {
       grid-area: content;
-      background: white;
+      background: #2e2e3a;
       padding: 20px;
       overflow-y: auto;
     }
@@ -83,6 +94,12 @@
     .tab-content.active {
       display: block;
     }
+    h1, h2, h3, h4, h5, h6 {
+      color: #e0d4f7;
+    }
+    p {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -91,9 +108,10 @@
       每日英文
     </header>
 
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       {% for post in site.posts %}
-        <a onclick="loadPost('{{ post.url }}')">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title | truncate: 30 }}</a>
+        {% assign parts = post.title | split: ' - ' %}
+        <a onclick="loadPost('{{ post.url }}', this)">{{ post.date | date: "%Y-%m-%d" }} - {{ parts[1] }}</a>
       {% endfor %}
     </div>
 
@@ -146,7 +164,7 @@
       event.target.classList.add('active');
     }
 
-    function loadPost(url) {
+    function loadPost(url, element) {
       if (posts[url]) {
         document.getElementById('article').innerHTML = posts[url].parts[0];
         document.getElementById('vocabulary').innerHTML = posts[url].parts[1];
@@ -154,6 +172,12 @@
         document.getElementById('answer').innerHTML = posts[url].parts[3];
         document.getElementById('source').innerHTML = posts[url].parts[4];
         document.getElementById('stats').innerText = '共 ' + Object.keys(posts).length + ' 篇文章 | 本篇文章：' + posts[url].title;
+
+        var links = document.querySelectorAll('.sidebar a');
+        links.forEach(function(link) {
+          link.classList.remove('active');
+        });
+        element.classList.add('active');
       }
     }
   </script>
