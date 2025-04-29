@@ -5,7 +5,6 @@
   <title>每日英文</title>
   <style>
     body {
-      display: flex;
       margin: 0;
       font-family: Arial, sans-serif;
     }
@@ -15,6 +14,9 @@
       padding: 20px;
       height: 100vh;
       overflow-y: auto;
+      position: fixed;
+      top: 100px; /* 移下 header 和 stats 高度 */
+      left: 0;
     }
     .sidebar a {
       display: block;
@@ -26,8 +28,9 @@
       text-decoration: underline;
     }
     .content {
-      flex: 1;
+      margin-left: 220px; /* 移出 sidebar 寬度 */
       padding: 40px;
+      margin-top: 160px; /* 移下 header 和 stats 空間 */
     }
     header {
       width: 100%;
@@ -40,14 +43,8 @@
       left: 0;
       z-index: 1000;
     }
-    main {
-      display: flex;
-      width: 100%;
-      margin-top: 120px; /* 留空給 header 和 stats */
-    }
     .stats {
       text-align: center;
-      margin-top: 80px;
       padding: 10px;
       background: #e0e0e0;
       width: 100%;
@@ -88,34 +85,33 @@
     Total Articles: {{ site.posts | size }} | Now Viewing: {{ page.title }}
   </div>
 
-  <main>
-    <div class="sidebar">
-      {% for post in site.posts %}
-        <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
-      {% endfor %}
+  <div class="sidebar">
+    {% for post in site.posts %}
+      <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="content">
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab('article')">Article</button>
+      <button class="tab-link" onclick="openTab('vocabulary')">Vocabulary</button>
+      <button class="tab-link" onclick="openTab('quiz')">Quiz</button>
+      <button class="tab-link" onclick="openTab('source')">Source</button>
     </div>
-    <div class="content">
-      <div class="tabs">
-        <button class="tab-link active" onclick="openTab('article')">Article</button>
-        <button class="tab-link" onclick="openTab('vocabulary')">Vocabulary</button>
-        <button class="tab-link" onclick="openTab('quiz')">Quiz</button>
-        <button class="tab-link" onclick="openTab('source')">Source</button>
-      </div>
-      {% assign parts = content | split: '---' %}
-      <div id="article" class="tab-content active">
-        {{ parts[0] }}
-      </div>
-      <div id="vocabulary" class="tab-content">
-        {{ parts[1] }}
-      </div>
-      <div id="quiz" class="tab-content">
-        {{ parts[2] }}
-      </div>
-      <div id="source" class="tab-content">
-        {{ parts[4] }}
-      </div>
+    {% assign parts = content | split: '---' %}
+    <div id="article" class="tab-content active">
+      {{ parts[0] }}
     </div>
-  </main>
+    <div id="vocabulary" class="tab-content">
+      {{ parts[1] }}
+    </div>
+    <div id="quiz" class="tab-content">
+      {{ parts[2] }}
+    </div>
+    <div id="source" class="tab-content">
+      {{ parts[4] }}
+    </div>
+  </div>
 
   <script>
     function openTab(tabId) {
