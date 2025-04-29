@@ -9,7 +9,7 @@ In Portugal, the outage halted metro services, disrupted mobile networks, and le
 
 Preliminary investigations suggest that the outage may have been caused by a rare atmospheric phenomenon affecting high-voltage power lines, leading to a loss of synchronization in the European power grid. Authorities estimate that full restoration of services could take several hours to a week, depending on the region.​[Wikipedia+1The Scottish Sun+1](https://en.wikipedia.org/wiki/2025_European_power_outage?utm_source=chatgpt.com)
 
----
+<!-- split -->
 ### Vocabulary
 
 1. **Blackout** – A period when the supply of electricity is interrupted.
@@ -18,7 +18,7 @@ Preliminary investigations suggest that the outage may have been caused by a rar
 4. **Disruption** – A disturbance or problems that interrupt an event, activity, or process.
 5. **Phenomenon** – A fact or situation that is observed to exist or happen, especially one whose cause is in question.​
     
----
+<!-- split -->
 ### Reading Comprehension
 
 1. **What areas were primarily affected by the April 28 power outage?**
@@ -42,14 +42,14 @@ Preliminary investigations suggest that the outage may have been caused by a rar
     C. Rare atmospheric phenomenon affecting power lines
     D. Human error in power plant operations
 
----
+<!-- split -->
 ### 📝 Answer Key
 
 1. C
 2. B
 3. C
 
----
+<!-- split -->
 📰 Source
 
 [2025 European power outage](https://en.wikipedia.org/wiki/2025_European_power_outage)
