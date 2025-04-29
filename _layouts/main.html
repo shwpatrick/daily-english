@@ -110,7 +110,7 @@
 
     <div class="sidebar" id="sidebar">
       {% for post in site.posts %}
-        {% assign parts = post.title | split: ' - ' %}
+        {% assign parts = post.title | split: ' – ' %}
         <a onclick="loadPost('{{ post.url }}', this)">{{ post.date | date: "%Y-%m-%d" }} - {{ parts[1] }}</a>
       {% endfor %}
     </div>
