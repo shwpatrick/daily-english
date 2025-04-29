@@ -38,11 +38,24 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 1000;
     }
     main {
       display: flex;
       width: 100%;
-      margin-top: 80px; /* 留空間給 header */
+      margin-top: 120px; /* 留空給 header 和 stats */
+    }
+    .stats {
+      text-align: center;
+      margin-top: 80px;
+      padding: 10px;
+      background: #e0e0e0;
+      width: 100%;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      z-index: 900;
+      font-size: 14px;
     }
     .tabs {
       margin-bottom: 20px;
@@ -70,6 +83,11 @@
   <header>
     <h1>每日英文</h1>
   </header>
+
+  <div class="stats">
+    Total Articles: {{ site.posts | size }} | Now Viewing: {{ page.title }}
+  </div>
+
   <main>
     <div class="sidebar">
       {% for post in site.posts %}
@@ -83,23 +101,18 @@
         <button class="tab-link" onclick="openTab('quiz')">Quiz</button>
         <button class="tab-link" onclick="openTab('source')">Source</button>
       </div>
+      {% assign parts = content | split: '---' %}
       <div id="article" class="tab-content active">
-        {% capture article %}{{ content | split: '# Vocabulary' | first }}{% endcapture %}
-        {{ article }}
+        {{ parts[0] }}
       </div>
       <div id="vocabulary" class="tab-content">
-        {% capture vocab_and_below %}{{ content | split: '# Vocabulary' | last }}{% endcapture %}
-        {% capture vocabulary %}{{ vocab_and_below | split: '# Quiz' | first }}{% endcapture %}
-        {{ vocabulary }}
+        {{ parts[1] }}
       </div>
       <div id="quiz" class="tab-content">
-        {% capture quiz_and_below %}{{ content | split: '# Quiz' | last }}{% endcapture %}
-        {% capture quiz %}{{ quiz_and_below | split: '# Source' | first }}{% endcapture %}
-        {{ quiz }}
+        {{ parts[2] }}
       </div>
       <div id="source" class="tab-content">
-        {% capture source %}{{ content | split: '# Source' | last }}{% endcapture %}
-        {{ source }}
+        {{ parts[4] }}
       </div>
     </div>
   </main>
