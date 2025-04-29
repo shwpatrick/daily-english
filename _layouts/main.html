@@ -40,6 +40,7 @@
       margin-bottom: 10px;
       text-decoration: none;
       color: #333;
+      cursor: pointer;
     }
     .sidebar a:hover {
       text-decoration: underline;
@@ -92,11 +93,11 @@
 
     <div class="sidebar">
       {% for post in site.posts %}
-        <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
+        <a onclick="loadPost('{{ post.url }}')">{{ post.date | date: "%Y-%m-%d" }}</a>
       {% endfor %}
     </div>
 
-    <div class="stats">
+    <div class="stats" id="stats">
       共 {{ site.posts | size }} 篇文章 | 本篇文章：{{ page.title }}
     </div>
 
@@ -109,26 +110,31 @@
     </div>
 
     <div class="content">
-      {% assign parts = content | split: '---' %}
-      <div id="article" class="tab-content active">
-        {{ parts[0] }}
-      </div>
-      <div id="vocabulary" class="tab-content">
-        {{ parts[1] }}
-      </div>
-      <div id="quiz" class="tab-content">
-        {{ parts[2] }}
-      </div>
-      <div id="answer" class="tab-content">
-        {{ parts[3] }}
-      </div>
-      <div id="source" class="tab-content">
-        {{ parts[4] }}
-      </div>
+      <div id="article" class="tab-content active"></div>
+      <div id="vocabulary" class="tab-content"></div>
+      <div id="quiz" class="tab-content"></div>
+      <div id="answer" class="tab-content"></div>
+      <div id="source" class="tab-content"></div>
     </div>
   </div>
 
   <script>
+    var posts = {
+      {% for post in site.posts %}
+      "{{ post.url }}": {
+        "title": "{{ post.title | escape }}",
+        "parts": [
+          {% assign parts = post.content | split: '---' %}
+          {{ parts[0] | jsonify }},
+          {{ parts[1] | jsonify }},
+          {{ parts[2] | jsonify }},
+          {{ parts[3] | jsonify }},
+          {{ parts[4] | jsonify }}
+        ]
+      },
+      {% endfor %}
+    };
+
     function openTab(tabId) {
       var tabs = document.getElementsByClassName('tab-content');
       var buttons = document.getElementsByClassName('tab-link');
@@ -138,6 +144,17 @@
       }
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
+    }
+
+    function loadPost(url) {
+      if (posts[url]) {
+        document.getElementById('article').innerHTML = posts[url].parts[0];
+        document.getElementById('vocabulary').innerHTML = posts[url].parts[1];
+        document.getElementById('quiz').innerHTML = posts[url].parts[2];
+        document.getElementById('answer').innerHTML = posts[url].parts[3];
+        document.getElementById('source').innerHTML = posts[url].parts[4];
+        document.getElementById('stats').innerText = '共 ' + Object.keys(posts).length + ' 篇文章 | 本篇文章：' + posts[url].title;
+      }
     }
   </script>
 </body>
