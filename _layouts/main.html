@@ -93,7 +93,7 @@
 
     <div class="sidebar">
       {% for post in site.posts %}
-        <a onclick="loadPost('{{ post.url }}')">{{ post.date | date: "%Y-%m-%d" }}</a>
+        <a onclick="loadPost('{{ post.url }}')">{{ post.date | date: "%Y-%m-%d" }} - {{ post.title | truncate: 30 }}</a>
       {% endfor %}
     </div>
 
