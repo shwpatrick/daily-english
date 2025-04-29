@@ -124,7 +124,7 @@
       "{{ post.url }}": {
         "title": "{{ post.title | escape }}",
         "parts": [
-          {% assign parts = post.content | split: '---' %}
+          {% assign parts = post.content | split: '<!-- split -->' %}
           {{ parts[0] | jsonify }},
           {{ parts[1] | jsonify }},
           {{ parts[2] | jsonify }},
