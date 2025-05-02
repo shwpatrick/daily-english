@@ -51,4 +51,4 @@ Art enthusiasts can explore the “Embracing: Palace Atmospheres” exhibition a
 <!-- split -->
 ### Source
 
-[K-Royal Culture Festival treats foreigners to traditional sights, smells and tastes](https://koreajoongangdaily.joins.com/news/2025/04/27/national/culture/KRoyal-Culture-Festival-Seoul-travel/20250427123456789.html)
+[K-Royal Culture Festival treats foreigners to traditional sights, smells and tastes]([https://koreajoongangdaily.joins.com/news/2025/04/27/national/culture/KRoyal-Culture-Festival-Seoul-travel/20250427123456789.html](https://koreajoongangdaily.joins.com/news/2025-04-29/culture/koreanHeritage/KRoyal-Culture-Festival-treats-foreigners-to-traditional-sights-smells-and-tastes/2296029?utm_source=chatgpt.com))
