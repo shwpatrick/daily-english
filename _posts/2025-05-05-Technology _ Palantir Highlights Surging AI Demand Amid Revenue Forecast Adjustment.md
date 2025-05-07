@@ -55,4 +55,4 @@ Palantir's experience reflects a broader trend in the tech industry, where compa
 
 ### Source
 
-[Palantir Calls AI Demand 'Ravenous,' Boosts Revenue Guidance](https://www.example.com)
+[Palantir Calls AI Demand 'Ravenous,' Boosts Revenue Guidance]([https://www.example.com](https://www.bloomberg.com/news/articles/2025-05-05/palantir-calls-ai-demand-ravenous-boosts-revenue-guidance?embedded-checkout=true))
