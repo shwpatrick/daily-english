@@ -55,4 +55,4 @@ The conflict has raised concerns over the potential for broader military engagem
 
 ### Source
 
-[India Launches Strikes on Pakistan Amid Rising Tensions](https://www.reuters.com/world/asia-pacific/india-launches-strikes-on-pakistan-may-7-2025/)
+[India Launches Strikes on Pakistan Amid Rising Tensions](https://www.ndtv.com/india-news/india-pakistan-tension-live-update-operation-sindoor-pahalgam-terror-attack-jammu-and-kashmir-rajasthan-blackout-in-punjab-8366542?utm_source=chatgpt.com)
